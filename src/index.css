@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased text-gray-900 bg-primary-900;
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .company-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+.alert-animation {
+  animation: alert-pulse 1.5s infinite;
+}
+
+@keyframes alert-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.5rem rgba(249, 115, 22, 0));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 1rem rgba(249, 115, 22, 0.7));
+  }
+}
+
+.timer-bar {
+  height: 8px;
+  background: linear-gradient(to right, #22C55E, #EAB308, #EF4444);
+  transition: width 0.1s linear;
+}
