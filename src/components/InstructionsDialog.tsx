@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { ChevronRight, AlertTriangle, Clock, DollarSign } from 'lucide-react';
+import { ChevronRight, AlertTriangle, Clock, DollarSign, PlayCircle , Cog} from 'lucide-react';
 
 const InstructionsDialog: React.FC = () => {
   const { startPlaying } = useGameStore();
@@ -11,7 +11,7 @@ const InstructionsDialog: React.FC = () => {
     {
       title: "Bem-vindo à Consultoria de Usabilidade!",
       text: "Você é um consultor de usabilidade de alto nível encarregado de ajudar empresas a corrigir seus problemas de usabilidade. As empresas entrarão em contato quando tiverem problemas com seus sites ou aplicativos.",
-      icon: <AlertTriangle size={32} className="text-accent-500" />
+      icon: <PlayCircle size={32} className="text-accent-500" />
     },
     {
       title: "Identificar Problemas",
@@ -21,7 +21,7 @@ const InstructionsDialog: React.FC = () => {
     {
       title: "Aplicar as Heurísticas de Nielsen",
       text: "Para cada problema, você precisará identificar qual das 10 Heurísticas de Usabilidade de Nielsen está sendo violada. Escolha a opção correta para resolver o problema.",
-      icon: <Clock size={32} className="text-primary-500" />
+      icon: <Cog size={32} className="text-pink-400" />
     },
     {
       title: "Contra o Relógio",
