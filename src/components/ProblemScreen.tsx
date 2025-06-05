@@ -73,15 +73,24 @@ const ProblemScreen: React.FC = () => {
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{currentProblem.title}</h3>
-        <p className="text-gray-700 mb-4">{currentProblem.description}</p>
-        
+        {currentProblem.difficulty === 'easy' && (
+          <>
+            <h3 className="text-xl font-bold mb-2">{currentProblem.title}</h3>
+            <p className="text-gray-700 mb-4">{currentProblem.description}</p>
+          </>
+        )}
+        {currentProblem.difficulty === 'medium' && (
+          <h3 className="text-xl font-bold mb-6">{currentProblem.title}</h3>
+        )}
+        {/* Para difícil, não mostra nada */}
         <div className="bg-gray-100 rounded-lg h-64 mb-6 flex items-center justify-center border-2 border-dashed border-gray-300">
-          <p className="text-gray-500">Imagem do Problema Será Exibida Aqui</p>
+          <img
+            src={currentProblem.imagePath}
+            alt="Imagem do problema"
+            className="max-h-60 max-w-full object-contain"
+          />
         </div>
-        
         <h4 className="text-lg font-semibold mb-3">Qual Heurística de Nielsen está sendo violada?</h4>
-        
         <div className="space-y-3">
           {heuristicOptions.map(heuristic => heuristic && (
             <motion.button
