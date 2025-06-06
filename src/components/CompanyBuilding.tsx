@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle, Building, Building2, Home, Library, School, ShoppingBag } from 'lucide-react';
+import { AlertCircle, Building, Building2, Home, School, ShoppingBag } from 'lucide-react';
 import { Company } from '../types';
 
 interface CompanyBuildingProps {
@@ -49,12 +49,12 @@ const CompanyBuilding: React.FC<CompanyBuildingProps> = ({ company, onClick }) =
 
   return (
     <motion.div
-      className={`${getBgColor()} rounded-lg p-4 flex flex-col items-center justify-center cursor-pointer h-40 relative ${
-        company.hasAlert ? 'alert-animation' : ''
+      className={`${getBgColor()} rounded-lg p-4 flex flex-col items-center justify-center h-40 relative ${
+        company.hasAlert ? 'cursor-pointer alert-animation' : 'cursor-not-allowed opacity-50'
       }`}
-      whileHover={{ scale: 1.05, y: -5 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={onClick}
+      whileHover={company.hasAlert ? { scale: 1.05, y: -5 } : {}}
+      whileTap={company.hasAlert ? { scale: 0.95 } : {}}
+      onClick={company.hasAlert ? onClick : undefined}
     >
       {company.hasAlert && (
         <motion.div 

@@ -83,12 +83,17 @@ const ProblemScreen: React.FC = () => {
           <h3 className="text-xl font-bold mb-6">{currentProblem.title}</h3>
         )}
         {/* Para difícil, não mostra nada */}
-        <div className="bg-gray-100 rounded-lg h-64 mb-6 flex items-center justify-center border-2 border-dashed border-gray-300">
-          <img
+        <div className="bg-gray-100 rounded-lg h-64 mb-6 flex items-center justify-center border-2 border-dashed border-gray-300 relative group">
+          <motion.img
             src={currentProblem.imagePath}
             alt="Imagem do problema"
-            className="max-h-60 max-w-full object-contain"
+            className="max-h-60 max-w-full object-contain transition-transform duration-300 z-10"
+            whileHover={{ scale: 2, zIndex: 50 }}
+            style={{ cursor: 'zoom-in' }}
           />
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white bg-opacity-80 text-xs text-gray-700 px-3 py-1 rounded shadow z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Passe o mouse sobre a imagem para dar zoom
+          </div>
         </div>
         <h4 className="text-lg font-semibold mb-3">Qual Heurística de Nielsen está sendo violada?</h4>
         <div className="space-y-3">
