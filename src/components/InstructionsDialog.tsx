@@ -25,7 +25,7 @@ const InstructionsDialog: React.FC = () => {
     },
     {
       title: "Contra o Relógio",
-      text: "Você terá tempo limitado para identificar cada problema - 20 segundos para problemas fáceis, 10 para médios e apenas 5 para difíceis. Quanto mais rápido você responder, mais pontos ganhará!",
+      text: "Você terá tempo limitado para identificar cada problema - 45 segundos para problemas fáceis, 35 para médios e apenas 25 para difíceis. Quanto mais rápido você responder, mais pontos ganhará!",
       icon: <Clock size={32} className="text-primary-500" />
     },
     {

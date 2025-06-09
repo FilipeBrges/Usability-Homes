@@ -67,8 +67,8 @@ const ProblemScreen: React.FC = () => {
       
       <div className="relative">
         <Timer timeRemaining={timeRemaining} totalTime={
-          currentProblem.difficulty === 'easy' ? 20 :
-          currentProblem.difficulty === 'medium' ? 10 : 5
+          currentProblem.difficulty === 'easy' ? 45 :
+          currentProblem.difficulty === 'medium' ? 35 : 25
         } />
       </div>
       

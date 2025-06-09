@@ -76,9 +76,9 @@ export const useGameStore = create<GameState>((set, get) => ({
       const problem = company.problems[randomProblemIndex];
       
       // Set the timer based on difficulty
-      let timeLimit = 20;
-      if (problem.difficulty === 'medium') timeLimit = 10;
-      if (problem.difficulty === 'hard') timeLimit = 5;
+      let timeLimit = 45;
+      if (problem.difficulty === 'medium') timeLimit = 35;
+      if (problem.difficulty === 'hard') timeLimit = 25;
       
       set({ 
         gamePhase: 'problem', 
